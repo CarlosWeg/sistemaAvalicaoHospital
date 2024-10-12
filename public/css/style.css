@@ -59,7 +59,6 @@ textarea:focus {
     box-shadow: 0 0 5px rgba(25, 118, 210, 0.5);
 }
 
-
 /* Botão de Submissão */
 input[type="submit"] {
     background-color: #1976d2; /* Azul do logotipo */
@@ -85,6 +84,36 @@ footer {
     font-size: 14px;
     color: #666;
     margin-top: 20px;
+}
+
+/* Estilo da Escala */
+.escala {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+/* Estilo padrão da escala */
+.label-escala {
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    width: 40px;
+    cursor: pointer;
+    transition: border 0.3s ease; /* Transição suave para a borda */
+    background-color: inherit; /* Mantém a cor de fundo herdada */
+    border: 2px solid transparent; /* Borda inicial invisível */
+}
+
+/* Ocultar os inputs de rádio */
+input[type="radio"] {
+    display: none;
+}
+
+/* Hover para o label */
+.label-escala:hover {
+    border: 2px solid #555; /* Borda leve no hover */
 }
 
 /* Responsividade */

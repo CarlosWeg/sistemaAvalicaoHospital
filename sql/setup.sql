@@ -8,6 +8,7 @@ CREATE TABLE setores (
 CREATE TABLE perguntas (
     id SERIAL PRIMARY KEY,                               -- ID da pergunta (PK)
     texto TEXT NOT NULL,                                 -- Texto da pergunta (obrigatório)
+    ordem INT NOT NULL,               		             -- Ordem de exibição (obrigatório)
     status BOOLEAN DEFAULT TRUE                          -- Status (ativa/inativa, valor padrão: ativa)
 );
 
