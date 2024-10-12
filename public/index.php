@@ -14,29 +14,35 @@ $perguntas = obterPerguntas();
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Avaliação de Serviços</h1>
-    <form action="../src/respostas.php" method="POST">
-        <?php foreach ($perguntas as $pergunta): ?>
-            <div class="pergunta">
-                <label><?= sanitizarEntrada($pergunta['texto']); ?></label>
-                <div class="escala">
-                    <?php for ($i = 0; $i <= 10; $i++): ?>
-                        <label>
-                            <input type="radio" name="respostas[<?= $pergunta['id']; ?>]" value="<?= $i; ?>" required>
-                            <?= $i; ?>
-                        </label>
-                    <?php endfor; ?>
+    <div class="container">
+        <img src="https://www.hrav.com.br/wp-content/uploads/2024/08/logo-white.png" alt="Logo do Hospital Regional do Alto Vale" class="logo">
+        
+        <h1>Avaliação de Serviços</h1>
+        
+        <form action="../src/respostas.php" method="POST">
+            <?php foreach ($perguntas as $pergunta): ?>
+                <div class="pergunta">
+                    <label><?= sanitizarEntrada($pergunta['texto']); ?></label>
+                    <div class="escala">
+                        <?php for ($i = 0; $i <= 10; $i++): ?>
+                            <label>
+                                <input type="radio" name="respostas[<?= $pergunta['id']; ?>]" value="<?= $i; ?>" required>
+                                <?= $i; ?>
+                            </label>
+                        <?php endfor; ?>
+                    </div>
                 </div>
-            </div>
-        <?php endforeach; ?>
+            <?php endforeach; ?>
 
-        <label for="feedback">Feedback adicional (opcional):</label>
-        <textarea name="feedback" id="feedback"></textarea>
+            <label for="feedback">Feedback adicional (opcional):</label>
+            <textarea name="feedback" id="feedback"></textarea>
 
-        <button type="submit">Enviar Avaliação</button>
-    </form>
-    <footer>
-        <p>Sua avaliação é anônima. Nenhuma informação pessoal será armazenada.</p>
-    </footer>
+            <button type="submit">Enviar Avaliação</button>
+        </form>
+        
+        <footer>
+            <p>Sua avaliação é anônima. Nenhuma informação pessoal será armazenada.</p>
+        </footer>
+    </div>
 </body>
 </html>
