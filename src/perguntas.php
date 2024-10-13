@@ -1,5 +1,6 @@
 <?php
 require_once 'db.php';
+require_once 'funcoes.php';
 
 function obterPerguntas() {
     $conexao = conectarBD();
@@ -28,20 +29,6 @@ if (isset($_GET['remover'])) {
     $query = "UPDATE perguntas SET status = FALSE WHERE id = $1";
     pg_query_params($conexao, $query, [$id]);
     pg_close($conexao);
-    header('Location: ../public/admin.php');
-    exit();
-}
-
-// Função para editar pergunta (opcional)
-if (isset($_POST['editar_pergunta'])) {
-    $id = (int)$_POST['id_pergunta'];
-    $texto = sanitizarEntrada($_POST['texto_pergunta']);
-    if ($id && $texto) {
-        $conexao = conectarBD();
-        $query = "UPDATE perguntas SET texto = $1 WHERE id = $2";
-        pg_query_params($conexao, $query, [$texto, $id]);
-        pg_close($conexao);
-    }
     header('Location: ../public/admin.php');
     exit();
 }

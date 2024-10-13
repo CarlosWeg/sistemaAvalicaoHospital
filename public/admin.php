@@ -47,7 +47,6 @@ $avaliacoes = obterAvaliacoes();
                         <td><?= $pergunta['id']; ?></td>
                         <td><?= sanitizarEntrada($pergunta['texto']); ?></td>
                         <td>
-                            <a href="../src/perguntas.php?editar=<?= $pergunta['id']; ?>">Editar</a> |
                             <a href="../src/perguntas.php?remover=<?= $pergunta['id']; ?>" onclick="return confirm('Tem certeza que deseja remover esta pergunta?');">Remover</a>
                         </td>
                     </tr>
@@ -81,7 +80,7 @@ $avaliacoes = obterAvaliacoes();
                 <?php endforeach; ?>
             </tbody>
         </table>
-
+        <br>
         <a href="../src/auth.php?logout=true">Sair</a>
     </div>
 </body>
