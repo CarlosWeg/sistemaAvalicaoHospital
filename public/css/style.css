@@ -1,100 +1,154 @@
 /* Estilo Global */
 body {
     font-family: 'Roboto', Arial, sans-serif;
-    background-color: #f9f9f9;
+    background-color: #f4f4f4;
     margin: 0;
     padding: 20px;
     color: #333;
 }
 
+/* Layout Centralizado */
 .container {
-    max-width: 1000px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #fff;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centraliza todo o conteúdo */
 }
 
-h1, h2 {
-    color: #d32f2f;
+/* Logo */
+.logo {
+    display: block;
+    margin: 0 auto 20px;
+    max-width: 150px; /* Tamanho máximo para a logo */
+    height: auto; /* Mantém a proporção da logo */
+}
+
+/* Estilo do Título */
+h1 {
+    color: #d32f2f; /* Vermelho principal da logo */
+    font-size: 24px;
     margin-bottom: 20px;
 }
 
-/* Seções do painel */
-.section {
-    margin-bottom: 40px;
-}
-
+/* Estilo do Formulário */
 form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: #f4f4f4;
-    padding: 20px;
+    background-color: #ffffff;
+    border: 2px solid #d32f2f; /* Borda vermelha */
     border-radius: 8px;
-    border: 1px solid #ddd;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
 }
 
+/* Inputs e Textarea */
 input[type="text"],
-input[type="submit"] {
-    margin-top: 10px;
+textarea {
     width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
 }
 
+/* Foco dos Inputs */
+input[type="text"]:focus,
+textarea:focus {
+    border-color: #1976d2; /* Azul para foco */
+    outline: none;
+    box-shadow: 0 0 5px rgba(25, 118, 210, 0.5);
+}
+
+/* Botão de Submissão */
 input[type="submit"] {
-    background-color: #d32f2f;
+    background-color: #1976d2; /* Azul do logotipo */
     color: white;
     border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
+    width: 100%;
     transition: background-color 0.3s ease;
 }
 
 input[type="submit"]:hover {
-    background-color: #b71c1c;
+    background-color: #004ba0; /* Tom mais escuro no hover */
 }
 
-/* Tabelas */
-.table {
-    width: 100%;
-    border-collapse: collapse;
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    color: #666;
     margin-top: 20px;
 }
 
-.table th, .table td {
-    padding: 10px;
-    border: 1px solid #ddd;
-    text-align: left;
-}
-
-.table th {
-    background-color: #f2f2f2;
-}
-
-.table tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-/* Gráfico simples */
-.chart {
+/* Estilo da Escala */
+.escala {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
-    height: 200px;
-    background-color: #f4f4f4;
+    margin-top: 10px;
+}
+
+/* Estilo padrão da escala */
+.label-escala {
     padding: 10px;
-    border-radius: 8px;
-}
-
-.bar {
-    width: 22%;
-    background-color: #d32f2f;
-    color: white;
+    color: #fff;
     text-align: center;
-    padding-top: 5px;
-    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    width: 40px;
+    cursor: pointer;
+    transition: border 0.3s ease; /* Transição suave para a borda */
+    background-color: inherit; /* Mantém a cor de fundo herdada */
+    border: 2px solid transparent; /* Borda inicial invisível */
 }
 
-.bar:hover {
-    background-color: #b71c1c;
+/* Ocultar os inputs de rádio */
+input[type="radio"] {
+    display: none;
+}
+
+/* Hover para o label */
+.label-escala:hover {
+    border: 2px solid #555; /* Borda leve no hover */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 22px;
+    }
+
+    .logo {
+        max-width: 120px; /* Reduz a logo para telas menores */
+    }
+    
+    input[type="submit"] {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .logo {
+        max-width: 100px; /* Ajuste adicional para telas bem pequenas */
+    }
+
+    input[type="submit"] {
+        font-size: 14px;
+    }
 }
