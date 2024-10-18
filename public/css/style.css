@@ -51,32 +51,6 @@ textarea {
     box-sizing: border-box;
 }
 
-/* Foco dos Inputs */
-input[type="text"]:focus,
-textarea:focus {
-    border-color: #1976d2; /* Azul para foco */
-    outline: none;
-    box-shadow: 0 0 5px rgba(25, 118, 210, 0.5);
-}
-
-/* Botão de Submissão */
-input[type="submit"] {
-    background-color: #1976d2; /* Azul do logotipo */
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    width: 100%;
-    transition: background-color 0.3s ease;
-}
-
-input[type="submit"]:hover {
-    background-color: #004ba0; /* Tom mais escuro no hover */
-}
-
 /* Rodapé */
 footer {
     text-align: center;
@@ -93,10 +67,14 @@ footer {
     margin-top: 10px;
 }
 
+.label-escala{
+    color:white;
+    font-weight: bold;
+}
+
 /* Estilo padrão da escala */
 .label-escala {
     padding: 10px;
-    color: #fff;
     text-align: center;
     border-radius: 5px;
     width: 40px;
@@ -104,6 +82,7 @@ footer {
     transition: border 0.3s ease; /* Transição suave para a borda */
     background-color: inherit; /* Mantém a cor de fundo herdada */
     border: 2px solid transparent; /* Borda inicial invisível */
+    opacity: 80%;
 }
 
 /* Ocultar os inputs de rádio */
